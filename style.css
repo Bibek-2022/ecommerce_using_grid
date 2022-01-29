@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+  background: rgba(100, 148, 237, 0.301);
+  /* color: aliceblue; */
+}
+
+.wrapper {
+  background-color: rgba(220, 20, 60, 0.253);
+  min-height: 80vh;
+  display: grid;
+  gap: 10px;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-areas:
+    "header header header"
+    "title title title"
+    "banner banner bb1"
+    "banner banner bb2"
+    "side-menu main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer   ";
+}
+.wrapper > * {
+  min-height: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  background-color: rgb(138, 59, 76);
+  grid-area: header;
+}
+
+.header ul {
+  display: flex;
+  gap: 25px;
+  /* justify-content: space-evenly; */
+}
+.header ul li {
+  list-style: none;
+  padding: 10px 20px;
+  border: 1px solid black;
+  font-weight: bold;
+}
+.title {
+  background-color: rgb(224, 214, 216);
+  grid-area: title;
+}
+.banner {
+  background-color: rgb(158, 89, 103);
+  grid-area: banner;
+}
+.bb1 {
+  background-color: rgb(113, 112, 131);
+  grid-area: bb1;
+}
+.bb2 {
+  background-color: rgb(160, 220, 20);
+  grid-area: bb2;
+}
+.side-menu {
+  background-color: rgb(201, 183, 187);
+  grid-area: side-menu;
+}
+.tags {
+  background-color: rgb(220, 67, 20);
+  grid-area: tags;
+}
+.recent {
+  background-color: rgb(211, 214, 218);
+  grid-area: recent;
+}
+.main {
+  background-color: rgb(48, 150, 56);
+  grid-area: main;
+
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.main > div {
+  padding: 4rem;
+  background-color: gainsboro;
+  margin: 5px;
+  flex: 1;
+}
+
+.footer {
+  background-color: rgb(122, 134, 111);
+  grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    gap: 10px;
+    /* grid-template-columns: auto; */
+    grid-template-areas:
+      "header header"
+      "title title"
+      "banner banner"
+      "banner banner"
+      "bb1 bb2"
+      "main main"
+      "main main"
+      "main main"
+      "tags side-menu"
+      "recent recent"
+      "footer footer";
+  }
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    /* grid-template-columns: auto; */
+    grid-template-areas:
+      "header"
+      "title"
+      "banner"
+      "banner"
+      "bb1"
+      "bb2"
+      "main"
+      "main"
+      "side-menu"
+      "tags"
+      "recent"
+      "footer";
+  }
+}
